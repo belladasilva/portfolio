@@ -1,0 +1,66 @@
+.technologies {
+  display: grid;
+  gap: var(--space-md);
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+}
+
+.intro {
+  margin: -0.55rem 0 0;
+  color: var(--color-text-secondary);
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+article {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity var(--duration-slow) var(--easing-standard), transform var(--duration-slow) var(--easing-standard);
+  transition-delay: calc(var(--delay) * 70ms + 80ms);
+}
+
+.reveal-visible article {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h3 {
+  margin: 0;
+}
+
+.chips {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chips span {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.52rem;
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  transition: border-color var(--duration-fast) var(--easing-standard),
+    background var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard);
+}
+
+.chips span:hover {
+  border-color: color-mix(in srgb, var(--color-purple) 55%, var(--color-border));
+  background: color-mix(in srgb, var(--color-purple) 8%, transparent);
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 980px) {
+  .groups {
+    grid-template-columns: 1fr;
+  }
+}

@@ -11,8 +11,15 @@
 npm-debug.log
 yarn-error.log
 
+# Local environment
+.env
+.env.*
+!.env.example
+
 # IDEs and editors
 .idea/
+*.iml
+.codex/
 .project
 .classpath
 .c9/
@@ -22,11 +29,8 @@ yarn-error.log
 
 # Visual Studio Code
 .vscode/*
-!.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
 !.vscode/extensions.json
-!.vscode/mcp.json
 .history/*
 
 # Miscellaneous

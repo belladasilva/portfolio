@@ -1,0 +1,11 @@
+<header class="nav-wrap">
+  <a href="#inicio" class="brand" aria-label="Ir para o início" (click)="onNavigate('inicio')">isabella<span>.dev</span></a>
+
+  <nav aria-label="Navegação principal" class="nav-links">
+    @for (link of links(); track link.id) {
+      <a [href]="'#' + link.id" [class.active]="activeSectionId() === link.id" [attr.aria-current]="activeSectionId() === link.id ? 'location' : null" (click)="onNavigate(link.id)">{{ link.label }}</a>
+    }
+  </nav>
+
+  <a href="#contato" class="nav-cta" [class.active]="activeSectionId() === 'contato'" [attr.aria-current]="activeSectionId() === 'contato' ? 'location' : null" (click)="onNavigate('contato')">Falar comigo</a>
+</header>

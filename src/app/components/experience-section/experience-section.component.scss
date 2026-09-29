@@ -1,0 +1,119 @@
+.experience {
+  position: relative;
+  display: grid;
+  gap: var(--space-md);
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+}
+
+.intro {
+  margin: -0.55rem 0 0;
+  color: var(--color-text-secondary);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-md);
+  padding-left: 1.2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.35rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(var(--color-purple), color-mix(in srgb, var(--color-cyan) 35%, transparent));
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 720ms var(--easing-standard);
+}
+
+.reveal-visible .timeline::before {
+  transform: scaleY(1);
+}
+
+.timeline-item {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface) 86%, transparent);
+  padding: var(--space-md);
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--duration-slow) var(--easing-standard),
+    transform var(--duration-slow) var(--easing-standard),
+    border-color var(--duration-fast) var(--easing-standard);
+  transition-delay: calc(var(--delay) * 90ms + 130ms);
+}
+
+.reveal-visible .timeline-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: -1.18rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--color-purple) 45%, var(--color-border));
+  background: var(--color-bg);
+}
+
+.timeline-item:hover {
+  border-color: color-mix(in srgb, var(--color-purple) 42%, var(--color-border));
+}
+
+.period {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h3 {
+  margin: 0.4rem 0;
+}
+
+.sub,
+.description {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.highlights {
+  margin: 0.8rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.highlights li {
+  color: var(--color-text-secondary);
+}
+
+.tags {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  padding: 0.2rem 0.55rem;
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,20 @@
+<section id="sobre" class="about" appReveal>
+  <p class="section-label">Sobre</p>
+  <h2>{{ about().headline }}</h2>
+
+  <div class="content">
+    <div class="text">
+      @for (paragraph of about().paragraphs; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+    </div>
+
+    <aside class="meta" aria-label="Formação acadêmica">
+      <p class="credential">{{ about().education.credential }}</p>
+      <p><strong>{{ about().education.program }}</strong></p>
+      <p>{{ about().education.institution }}</p>
+      <p>{{ about().education.location }}</p>
+      <p>{{ about().education.period }}</p>
+    </aside>
+  </div>
+</section>

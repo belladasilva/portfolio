@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+}
+
+.main-content {
+  --content-width: min(1120px, 100% - 2rem);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  padding: var(--space-md) 0 clamp(3rem, 6vw, 5rem);
+}
+
+.sections-content {
+  display: grid;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  width: var(--content-width);
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    --content-width: min(1180px, 100% - 4rem);
+  }
+}

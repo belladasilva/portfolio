@@ -1,0 +1,17 @@
+<section id="tecnologias" class="technologies" appReveal>
+  <h2>Stack</h2>
+  <p class="intro">{{ sectionText.technologies }}</p>
+
+  <div class="groups">
+    @for (group of groups(); track group.title; let index = $index) {
+      <article [style.--delay]="index">
+        <h3>{{ group.title }}</h3>
+        <div class="chips">
+          @for (item of group.items; track item) {
+            <span>{{ item }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

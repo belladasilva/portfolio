@@ -1,0 +1,34 @@
+.startup {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-startup);
+  display: grid;
+  place-items: center;
+  background: #050508;
+  transition: opacity 140ms ease-out;
+  pointer-events: none;
+}
+
+.startup-exit {
+  opacity: 0;
+}
+
+.aperture {
+  width: min(82vw, 900px);
+  height: min(72vh, 580px);
+  background: color-mix(in srgb, var(--color-purple) 10%, var(--color-bg));
+  box-shadow: 0 0 25px color-mix(in srgb, var(--color-purple) 22%, transparent);
+  animation: monitor-on 540ms ease-out both;
+}
+
+@keyframes monitor-on {
+  0% { transform: scale(0, 0.004); opacity: 0; }
+  15% { opacity: 1; }
+  45% { transform: scale(1, 0.004); }
+  100% { transform: scale(1, 1); opacity: 0.25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .startup { display: none; }
+  .aperture { animation: none; }
+}

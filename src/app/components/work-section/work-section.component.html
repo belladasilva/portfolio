@@ -1,0 +1,10 @@
+<section id="processo" class="workflow" appReveal>
+  <h2>Do bug ao merge.</h2>
+  <p class="intro">{{ sectionText.workflow }}</p>
+
+  <ol class="steps" aria-label="Fluxo de investigação e correção">
+    @for (step of steps(); track step.title; let index = $index) {
+      <li class="step" [style.--delay]="index"><span>{{ step.title }}</span></li>
+    }
+  </ol>
+</section>

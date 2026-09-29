@@ -1,0 +1,22 @@
+<div [class]="'fallback fallback-' + preview()" aria-hidden="true">
+  @switch (preview()) {
+    @case ('library') {
+      <div class="library-window">
+        <div class="preview-toolbar"><span>Acervo</span><span>Livros · Usuários · Empréstimos</span></div>
+        <div class="table-row table-head"><span>ID</span><span>Livro</span><span>Status</span></div>
+        <div class="table-row"><span>001</span><span>Clean Code</span><span>Disponível</span></div>
+        <div class="table-row"><span>002</span><span>Design Patterns</span><span>Emprestado</span></div>
+        <div class="table-row"><span>003</span><span>Refactoring</span><span>Disponível</span></div>
+      </div>
+    }
+    @case ('gallery') {
+      <div class="gallery-preview"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    }
+    @case ('inventory') {
+      <div class="inventory-preview"><span>Inventory</span><div><span>Product</span><span>Quantity</span></div><div><span>Keyboard</span><span>24</span></div><div><span>Monitor</span><span>08</span></div><div><span>Mouse</span><span>16</span></div></div>
+    }
+    @case ('game') {
+      <div class="game-preview"><span class="game-score">SCORE 08</span><i class="game-ball"></i><i class="game-cube cube-one"></i><i class="game-cube cube-two"></i></div>
+    }
+  }
+</div>

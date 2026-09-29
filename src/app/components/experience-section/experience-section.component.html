@@ -1,0 +1,36 @@
+<section id="experiencia" class="experience" appReveal>
+  <h2>Experiência</h2>
+  <p class="intro">{{ sectionText.experience }}</p>
+
+  <div class="timeline" aria-label="Linha do tempo de experiência">
+    @for (item of items(); track item.role; let index = $index) {
+      <article class="timeline-item" [style.--delay]="index">
+        <div class="head">
+          <p class="period">{{ item.startDate }} — {{ item.endDate }}</p>
+          <h3>{{ item.role }}</h3>
+          @if (item.company) {
+            <p class="sub">{{ item.company }} @if (item.location) { • {{ item.location }} }</p>
+          } @else if (item.type) {
+            <p class="sub">{{ item.type }}</p>
+          }
+        </div>
+
+        <p class="description">{{ item.description }}</p>
+
+        @if (item.highlights.length) {
+          <ul class="highlights">
+            @for (highlight of item.highlights; track highlight) {
+              <li>{{ highlight }}</li>
+            }
+          </ul>
+        }
+
+        <div class="tags">
+          @for (tag of item.tags; track tag) {
+            <span>{{ tag }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>

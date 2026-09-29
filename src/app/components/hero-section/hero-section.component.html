@@ -1,0 +1,43 @@
+<section
+  id="inicio"
+  class="hero"
+  appReveal
+  [style.--tilt-x]="rotateX()"
+  [style.--tilt-y]="rotateY()"
+  (pointermove)="onPointerMove($event)"
+  (pointerleave)="onPointerLeave($event)"
+>
+  <div class="hero-content">
+    <div class="hero-copy">
+      <h1 class="hero-item" style="--i: 0">{{ hero().name }}</h1>
+      <p class="role hero-item" style="--i: 1">{{ hero().role }}</p>
+      <p class="summary hero-item" style="--i: 2">{{ hero().summary }}</p>
+
+      <div class="hero-actions hero-item" style="--i: 3">
+        <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+        <a [href]="hero().githubUrl" class="btn btn-subtle" target="_blank" rel="noopener noreferrer">GitHub</a>
+        @if (hasResume()) {
+          <a [href]="hero().resumeUrl" class="btn btn-subtle" target="_blank" rel="noopener noreferrer">Currículo</a>
+        }
+      </div>
+    </div>
+
+    <aside class="workspace" aria-hidden="true">
+      <div class="workspace-top">
+        <span class="dot dot-pink"></span>
+        <span class="dot dot-cyan"></span>
+        <span class="dot dot-green"></span>
+        <p>isabella.ts</p>
+      </div>
+
+      <div class="workspace-body">
+        <p><span class="line">1</span><span class="kw">const</span> isabella = &#123;</p>
+        <p><span class="line">2</span>&nbsp;&nbsp;<span class="key">basedIn</span>: <span class="str">'{{ code().basedIn }}'</span>,</p>
+        <p><span class="line">3</span>&nbsp;&nbsp;<span class="key">studiedIn</span>: <span class="str">'{{ code().studiedIn }}'</span>,</p>
+        <p><span class="line">4</span>&nbsp;&nbsp;<span class="key">enjoys</span>: [@for (item of code().enjoys; track item; let last = $last) {<span class="str">'{{ item }}'</span>@if (!last) {, }}],</p>
+        <p><span class="line">5</span>&nbsp;&nbsp;<span class="key">mindset</span>: <span class="str">'{{ code().mindset }}'</span></p>
+        <p><span class="line">6</span>&#125;;<span class="cursor">|</span></p>
+      </div>
+    </aside>
+  </div>
+</section>

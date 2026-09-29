@@ -1,0 +1,11 @@
+<section id="contato" class="contact" appReveal>
+  <p class="section-label">Contato</p>
+  <h2>{{ contact().title }}</h2>
+  <p class="description">{{ contact().description }}</p>
+
+  <div class="actions">
+    <a [href]="contact().linkedinUrl" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a [href]="contact().githubUrl" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a [href]="'mailto:' + contact().email">Enviar e-mail</a>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+.contact {
+  display: grid;
+  gap: var(--space-sm);
+  border-top: 1px solid color-mix(in srgb, var(--color-purple) 24%, var(--color-border));
+  padding-top: var(--space-lg);
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.description {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+a {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-surface-secondary) 80%, transparent);
+  color: var(--color-text-secondary);
+  padding: 0.5rem 0.8rem;
+  text-decoration: none;
+  font: inherit;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--easing-standard),
+    color var(--duration-fast) var(--easing-standard),
+    transform var(--duration-fast) var(--easing-standard);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-purple);
+  border-color: color-mix(in srgb, var(--color-purple) 48%, var(--color-border));
+  transform: translateY(-1px);
+}

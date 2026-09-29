@@ -1,1 +1,110 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  color-scheme: dark;
+
+  --color-bg: #0b0d12;
+  --color-surface: #11131a;
+  --color-surface-secondary: #171923;
+  --color-border: #2a2d3a;
+
+  --color-text-primary: #f8f8f2;
+  --color-text-secondary: #d2d6e9;
+  --color-text-muted: #a6adc8;
+
+  --color-purple: #bd93f9;
+  --color-pink: #ff79c6;
+  --color-cyan: #8be9fd;
+  --color-green: #50fa7b;
+
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+
+  --radius-sm: 0.45rem;
+  --radius-md: 0.62rem;
+  --radius-lg: 0.95rem;
+  --radius-pill: 999px;
+
+  --duration-fast: 180ms;
+  --duration-slow: 420ms;
+  --easing-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --shadow-soft: 0 12px 36px color-mix(in srgb, black 32%, transparent);
+
+  --z-navbar: 40;
+  --z-startup: 90;
+
+  --font-base: Inter, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-base);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+@media (max-width: 820px) {
+  html { scroll-padding-top: 9rem; }
+}
+
+body {
+  background-image: radial-gradient(circle at 3% 5%, color-mix(in srgb, var(--color-purple) 5%, transparent), transparent 36%);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--color-purple) 80%, white);
+  outline-offset: 2px;
+}
+
+.section-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--color-purple) 58%, var(--color-text-muted));
+}
+
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-slow) var(--easing-standard), transform var(--duration-slow) var(--easing-standard);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-ready {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
