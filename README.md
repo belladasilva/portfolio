@@ -1,19 +1,26 @@
-# Isabella Da Silva — portfolio
+# Isabella Da Silva — Portfolio
 
-Portfolio em Angular, TypeScript e SCSS.
+Personal portfolio built with Angular, TypeScript, and SCSS to showcase my experience, projects, and current technical stack.
 
-## Desenvolvimento
+## Live
 
-```bash
-npm install
-npm start
-```
+🌐 [isabelladasilva.dev](https://isabelladasilva.dev)
 
-## Validação
+## Tech Stack
 
-```bash
-npm run build
-npm test -- --watch=false
-```
+- Angular
+- TypeScript
+- SCSS
+- HTML
+- Git / GitHub
+- Vercel
 
-O conteúdo editável dos projetos fica em `src/app/data/portfolio.data.ts`. Para adicionar uma screenshot real, coloque o arquivo em `public/projects/` e configure o caminho no campo `image` do projeto. Enquanto `image` for `null`, o card mostra seu preview em HTML/CSS.
+## About
+
+The portfolio includes:
+
+- Professional experience in software development
+- Selected personal and academic projects
+- Technologies I've worked with
+- My current focus in backend and full-stack development
+- Contact links and professional profiles
